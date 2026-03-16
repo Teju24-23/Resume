@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Professional Resume</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+min-height:100vh;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.resume-box{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+border-radius:15px;
+padding:40px;
+width:800px;
+color:white;
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
+text-align:center;
+}
+
+h1{
+margin-bottom:25px;
+letter-spacing:1px;
+}
+
+button{
+padding:10px 18px;
+margin:6px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+background:rgba(255,255,255,0.15);
+color:white;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{
+transform:translateY(-2px);
+background:#00c6ff;
+}
+
+button.active{
+background:#00c6ff;
+box-shadow:0 0 15px #00c6ff;
+}
+
+.section{
+display:none;
+margin-top:30px;
+animation:fade 0.4s ease;
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(10px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+ul{
+text-align:left;
+display:inline-block;
+}
+
+.photo-card{
+width:230px;
+margin:auto;
+padding:25px;
+border-radius:15px;
+background:rgba(255,255,255,0.1);
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.photo-card img{
+width:150px;
+height:150px;
+border-radius:50%;
+border:4px solid #00c6ff;
+object-fit:cover;
+margin-top:10px;
+}
+
+.contact-box p{
+margin:8px 0;
+}
+
+</style>
+
+<script>
+
+function showSection(sectionId,btn){
+
+let sections=document.querySelectorAll(".section");
+sections.forEach(sec=>sec.style.display="none");
+
+let buttons=document.querySelectorAll("button");
+buttons.forEach(b=>b.classList.remove("active"));
+
+document.getElementById(sectionId).style.display="block";
+
+btn.classList.add("active");
+
+}
+
+window.onload=function(){
+document.getElementById("photo").style.display="block";
+document.querySelector("button").classList.add("active");
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="resume-box">
+
+<h1>My Resume</h1>
+
+<button onclick="showSection('name',this)">Name</button>
+<button onclick="showSection('education',this)">Education</button>
+<button onclick="showSection('skills',this)">Skills</button>
+<button onclick="showSection('certifications',this)">Certifications</button>
+<button onclick="showSection('projects',this)">Projects</button>
+<button onclick="showSection('contact',this)">Contact</button>
+<button onclick="showSection('photo',this)">Photo</button>
+
+
+<div id="name" class="section">
+
+<h2>Tejaswini DS</h2>
+<p>Aspiring Professional | BCA Final Year</p>
+
+</div>
+
+
+<div id="education" class="section">
+
+<ul>
+<li><b>BCA</b> – Vidya Sanskar Institute (BCU) | CGPA: 8.5</li>
+<li><b>PUC</b> – KLE PU College | 59%</li>
+<li><b>SSLC</b> – Soundarya School | 69%</li>
+</ul>
+
+</div>
+
+
+<div id="skills" class="section">
+
+<ul>
+<li>Python</li>
+<li>MySQL</li>
+<li>MS Excel</li>
+<li>Windows</li>
+</ul>
+
+</div>
+
+
+<div id="certifications" class="section">
+
+<ul>
+<li>Python Full Stack Development</li>
+<li>Data Analysis</li>
+<li>Excel Automation</li>
+</ul>
+
+</div>
+
+
+<div id="projects" class="section">
+
+<ul>
+<li>Interactive Resume Website (HTML, CSS, JavaScript)</li>
+<li>Student Data Analysis using Python</li>
+<li>Excel Automation Dashboard</li>
+</ul>
+
+</div>
+
+
+<div id="contact" class="section contact-box">
+
+<p><b>Email:</b> tejaswinidsic41@gmail.com</p>
+<p><b>Mobile:</b> 8431749691</p>
+
+</div>
+
+
+<div id="photo" class="section">
+
+<div class="photo-card">
+
+<h3>Photo</h3>
+
+<img src="myresume.jpeg">
+
+</div>
+
+</div>
+
+
+</div>
+
+</body>
+
+</html>
